@@ -20,6 +20,18 @@ public class Main {
     public static void task1() {
         System.out.println("Задача 1");
         int[] arr = generateRandomArray();
+        int monthSpending = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int current = arr[i];
+            monthSpending = monthSpending + current;
+        }
+        System.out.println("Сумма трат за месяц составила " + monthSpending + " рублей");
+
+    }
+
+    public static void task2() {
+        System.out.println("Задача 2");
+        int[] arr = generateRandomArray();
         int maxArr = -1;
         for (int i = 0; i < arr.length; i++) {
             int current = arr[i];
@@ -27,67 +39,40 @@ public class Main {
                 maxArr = current;
             }
         }
-        System.out.println("Сумма трат за месяц составила " + maxArr + " рублей");
-
-    }
-
-    public static void task2() {
-        System.out.println("Задача 2");
-        int[] arr = generateRandomArray();
-        int day = 30;
-        int maxArr = -1;
+        System.out.println("Максимальная сумма трат за день составила " + maxArr + " рублей");
+        int minArr = arr[0];
         for (int i = 0; i < arr.length; i++) {
             int current = arr[i];
-            if (current > maxArr){
-                maxArr = current;
+            if (current < minArr) {
+                minArr = current;
             }
         }
-        int maxDayArr = maxArr / day;
-        System.out.println("Максимальная сумма трат за день составила " + maxDayArr + " рублей");
-        for (int i = 0; i < arr.length; i++) {
-            int current = arr[i];
-            if (current < maxArr) {
-                maxArr = current;
-            }
-        }
-        int minDayArr = maxArr / day;
-                System.out.println("Минимальная сумма трат за день составила " + minDayArr + " рублей");
+        System.out.println("Минимальная сумма трат за день составила " + minArr + " рублей");
 
     }
 
     public static void task3() {
         System.out.println("Задача 3");
         int[] arr = generateRandomArray();
+        int monthSpending = 0;
+        int middleSpending = 0;
         int day = 30;
-        int maxArr = -1;
         for (int i = 0; i < arr.length; i++) {
             int current = arr[i];
-            if (current > maxArr){
-                maxArr = current;
-            }
+            monthSpending = monthSpending + current;
+            middleSpending = monthSpending / day;
         }
-        int maxDayArr = maxArr;
-        System.out.println("Максимальная сумма трат за день составила " + maxDayArr + " рублей");
-        for (int i = 0; i < arr.length; i++) {
-            int current = arr[i];
-            if (current < maxArr) {
-                maxArr = current;
-            }
-        }
-        int minDayArr =maxArr;
-        System.out.println("Минимальная сумма трат за день составила " + minDayArr + " рублей");
-        int midDayArr = minDayArr + ((maxDayArr- minDayArr) / 2);
-        System.out.println("Средняя сумма трат за месяц составила " + midDayArr + " рублей");
+        System.out.println("Средняя сумма трат за месяц составила " + middleSpending + " рублей");
     }
-
 
     public static void task4() {
         System.out.println("Задача 4");
-        char[] reverseFullName = new char[] {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] reverseFullName = new char[]{'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         for (int i = reverseFullName.length - 1; i >= 0; i--) {
-            System.out.println(reverseFullName[i]);
+            System.out.print(reverseFullName[i]);
             if (i != 0) {
             }
         }
+        System.out.println();
     }
 }
